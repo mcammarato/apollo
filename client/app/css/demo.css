@@ -1,0 +1,141 @@
+/* Body */
+
+body {
+  background-color: #F5F5F5;
+}
+
+/* Navbar */
+
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+}
+
+.nav-links li {
+  display: inline-block;
+}
+
+.nav-links li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav-links li a:hover {
+  background-color: #111;
+}
+
+/* Drop Menu */
+
+.dropit .dropit-open .dropit-submenu {
+    display: block;
+    background-color: #fff;
+}
+
+.dropit .dropit-open .dropit-submenu li {
+
+  width: 100%;
+}
+
+.dropit .dropit-open .dropit-submenu li a {
+  color: black;
+}
+
+.dropit .dropit-open .dropit-submenu li a:hover {
+  background-color: #f2f2f2;
+}
+
+/* Carousel*/
+
+.content {
+  margin: 0 auto;
+  padding: 0px 50px 0px 50px;
+  width: 50%;
+  height: 300px;
+}
+
+.carousel {
+    background-color: #fff;
+    width: 100%;
+}
+
+.carousel div {
+    text-align: center;
+}
+
+/* Modal Popup */
+
+/* Outer */
+.popup {
+    width:100%;
+    height:100%;
+    display:none;
+    position:fixed;
+    top:0px;
+    left:0px;
+    background:rgba(0,0,0,0.75);
+}
+
+/* Inner */
+.popup-inner {
+    max-width:700px;
+    width:90%;
+    padding:40px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform:translate(-50%, -50%);
+    transform:translate(-50%, -50%);
+    box-shadow:0px 2px 6px rgba(0,0,0,1);
+    border-radius:3px;
+    background:#fff;
+}
+
+/* Close Button */
+.popup-close {
+    width:30px;
+    height:26px;
+    padding-top:4px;
+    display:inline-block;
+    position:absolute;
+    top:0px;
+    right:0px;
+    transition:ease 0.25s all;
+    -webkit-transform:translate(50%, -50%);
+    transform:translate(50%, -50%);
+    border-radius:1000px;
+    background:rgba(0,0,0,0.8);
+    font-family:Arial, Sans-Serif;
+    font-size:20px;
+    text-align:center;
+    line-height:100%;
+    color:#fff;
+    text-decoration: none;
+}
+
+
+
+/* Button Styling */
+
+.btn {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 0;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+}
+
+/* Modal Button Alignment */
+
+.modal {
+  padding-top: 60px;
+  text-align: center;
+
+}
