@@ -41,7 +41,7 @@ app.use('/fonts', express.static(__dirname + '/client/assets/fonts'));
 
 
 // jQuery
-app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist'));
+app.use('/js', express.static(__dirname + '/node_modules/jquery/dist'));
 // Foundation CSS
 app.use('/css', express.static(__dirname + '/node_modules/foundation-sites/dist/css'));
 // Foundation JS
