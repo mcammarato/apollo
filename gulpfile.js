@@ -1,6 +1,8 @@
 var gulp        = require('gulp'),
     watch       = require('gulp-watch'),
     sass        = require('gulp-sass'),
+    less        = require('gulp-less'),
+    path        = require('path'),
     server      = require('gulp-develop-server'),
     bs          = require('browser-sync'),
     rename      = require('gulp-rename');
@@ -12,7 +14,14 @@ gulp.task('styles', function () {
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('client/assets/css'));
 });
- 
+
+// Compile LESS to CSS
+gulp.task('less', function() {
+  return gulp.src('client/assets/less/**/*.less')
+    .pipe(less())
+    .pipe(gulp.dest('client/assets/css'));
+});
+
 
 // Browser Sync Init Options
 var options = {
@@ -49,14 +58,13 @@ gulp.task('server:restart', function() {
     });
 });
 
-
 // Watch Task
 gulp.task('watch', ['server:start'], function () {
     gulp.watch('client/assets/scss/**/*.scss',['styles']);
+    gulp.watch('client/assets/less/**/*.less',['less']);
     gulp.watch('client/**/*.html').on('change', bs.reload);
     gulp.watch('client/assets/css/**/*.css').on('change', bs.reload);
     gulp.watch('client/views/**/*.hbs').on('change', bs.reload);
     gulp.watch('client/views/layouts/**/*.hbs').on('change', bs.reload);
     gulp.watch('client/views/partials/**/*.hbs').on('change', bs.reload);
 });
-

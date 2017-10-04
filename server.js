@@ -12,7 +12,7 @@ app.set('view engine', 'hbs');
 app.set('views', 'client/views/partials');
 
 app.engine('hbs', hbs({
-        defaultLayout: 'index', 
+        defaultLayout: 'index',
         extname: '.hbs',
         layoutsDir:'client/views/layouts',
         partialsDir: 'client/views/partials'
@@ -28,6 +28,8 @@ app.engine('hbs', hbs({
 app.use('/css', express.static(__dirname + '/client/assets/css'));
 // SCSS
 app.use('/scss', express.static(__dirname + '/client/assets/scss'));
+// LESS
+app.use('/less', express.static(__dirname + '/client/assets/less'));
 // JS
 app.use('/js', express.static(__dirname + '/client/assets/js'));
 // Images
@@ -41,7 +43,7 @@ app.use('/fonts', express.static(__dirname + '/client/assets/fonts'));
 
 
 // jQuery
-app.use('/js', express.static(__dirname + '/node_modules/jquery/dist'));
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist'));
 // Foundation CSS
 app.use('/css', express.static(__dirname + '/node_modules/foundation-sites/dist/css'));
 // Foundation JS
@@ -59,20 +61,19 @@ app.use('/browser-sync', express.static(__dirname + '/node_modules/browser-sync/
 /// Server Routes ///
 ///////////////////
 
-
-// Root Index
+// Handlebars Rotue
 app.get('/', function(req, res) {
+  res.render('header');
+});
+
+// Index
+app.get('/index', function(req, res) {
   res.sendFile(__dirname + '/client/index.html');
 });
 
 // Componets Page
 app.get('/componets', function(req, res) {
   res.sendFile(__dirname + '/client/componets.html');
-});
-
-// HBS Testing
-app.get('/hbs', function(req, res) {
-  res.render('header');
 });
 
 // 404
