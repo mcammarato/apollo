@@ -1,10 +1,8 @@
-///////////////////////////////////////////////////
-//////////////// Mike Cammarato ///////////////////
+/* Mike Cammarato */
 
-To run locally:
+Getting started:
 
-1. After downloading the repository, navigate to folder in terminal/command prompt.
-2. Run 'npm install' to download dependencies.
-3. Run 'node server' to start the server.
-4. In a new terminal window, run 'gulp watch' to compile SCSS and start Browserify.
-5. Enjoy :)
+1. Download zip file of the repository, unzip, and navigate to the folder in terminal or command prompt.
+2. Run 'npm install --save' to download dependencies.
+3. Run 'gulp watch' to compile SCSS, LESS, and start Browsersync.
+4. Enjoy :)
