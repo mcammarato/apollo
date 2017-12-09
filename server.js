@@ -3,6 +3,8 @@ var express     = require('express'),
     hbs         = require('express-handlebars'),
     app         = express();
 
+process.env.NODE_ENV = 'production';
+
 
 /// Express-Handlebars Config ///
 ////////////////////////////////
