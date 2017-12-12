@@ -1,0 +1,30 @@
+{
+  "name": "apollo",
+  "description": "client side base",
+  "main": "server.js",
+  "authors": [
+    "Mike Cammarato"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "client",
+    "web",
+    "development"
+  ],
+  "homepage": "https://github.com/mcammarato/apollo",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1",
+    "font-awesome": "^4.7.0",
+    "slick-carousel": "^1.8.1",
+    "foundation-sites": "^6.4.3"
+  }
+}
