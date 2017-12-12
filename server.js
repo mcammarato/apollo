@@ -9,17 +9,16 @@ process.env.NODE_ENV = 'production';
 /// Express-Handlebars Config ///
 ////////////////////////////////
 
-app.set('view engine', 'hbs');
-
-app.set('views', 'client/views/partials');
+app.set('views', 'client/views/');
 
 app.engine('hbs', hbs({
-        defaultLayout: 'index',
+        defaultLayout: 'home-layout',
         extname: '.hbs',
         layoutsDir:'client/views/layouts',
         partialsDir: 'client/views/partials'
 }));
 
+app.set('view engine', 'hbs');
 
 
 /// Client Side Assets ///
@@ -38,24 +37,28 @@ app.use('/js', express.static(__dirname + '/client/assets/js'));
 app.use('/images', express.static(__dirname + '/client/assets/images'));
 // Fonts
 app.use('/fonts', express.static(__dirname + '/client/assets/fonts'));
+// Bootstrap less
+app.use('/bootstrap', express.static(__dirname + '/client/assets/bootstrap/less'));
 
-
-/// Node Moduels ///
-///////////////////
-
-
-// jQuery
-app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist'));
+//jQuery
+app.use('/jquery', express.static(__dirname + '/bower_components/jquery/dist'));
+// Bootstrap less
+app.use('/bootstrap', express.static(__dirname + '/bower_components/bootstrap/less'));
+// Bootstrap JS
+app.use('/bootstrap', express.static(__dirname + '/bower_components/bootstrap/dist/js'));
 // Foundation CSS
-app.use('/css', express.static(__dirname + '/node_modules/foundation-sites/dist/css'));
+app.use('/foundation', express.static(__dirname + '/bower_components/foundation-sites/dist/css'));
 // Foundation JS
-app.use('/js', express.static(__dirname + '/node_modules/foundation-sites/dist/js'));
+app.use('/foundation', express.static(__dirname + '/bower_components/foundation-sites/dist/js'));
 // Slick Carousel
-app.use('/slick', express.static(__dirname + '/node_modules/slick-carousel/slick'));
-// Dropit
-app.use('/dropit', express.static(__dirname + '/node_modules/jb-dropit'));
-// Font Awesome Icons
-app.use('/font-awesome', express.static(__dirname + '/node_modules/font-awesome/css'));
+app.use('/slick', express.static(__dirname + '/bower_components/slick-carousel/slick'));
+// Font Awesome
+app.use('/font-awesome', express.static(__dirname + '/bower_components/font-awesome/css'));
+
+
+/// Server Side Assets ///
+//////////////////////////
+
 // Browser-Sync
 app.use('/browser-sync', express.static(__dirname + '/node_modules/browser-sync/bin'));
 
@@ -63,14 +66,13 @@ app.use('/browser-sync', express.static(__dirname + '/node_modules/browser-sync/
 /// Server Routes ///
 ///////////////////
 
-// Handlebars Rotue
+// Handlebars Rotues
 app.get('/', function(req, res) {
-  res.render('header');
+  res.render('index');
 });
 
-// Index
-app.get('/index', function(req, res) {
-  res.sendFile(__dirname + '/client/index.html');
+app.get('/interior', function(req, res) {
+  res.render('interior', {layout: 'interior-layout.hbs'});
 });
 
 // Componets Page
