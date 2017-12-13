@@ -36,6 +36,7 @@
     "gulp-nodemon": "^2.2.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
+    "gulp-savefile": "^0.1.1",
     "gulp-watch": "^4.3.10"
   }
 }

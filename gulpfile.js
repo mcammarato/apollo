@@ -5,6 +5,7 @@ var gulp        = require('gulp'),
     path        = require('path'),
     server      = require('gulp-develop-server'),
     bs          = require('browser-sync'),
+    saveFile    = require('gulp-savefile')
     rename      = require('gulp-rename');
 
 
@@ -58,10 +59,14 @@ gulp.task('server:restart', function() {
     });
 });
 
+
 // Watch Task
 gulp.task('watch', ['server:start'], function () {
     gulp.watch('client/assets/scss/**/*.scss',['styles']);
     gulp.watch('client/assets/less/**/*.less',['less']);
+    gulp.watch('client/assets/bootstrap/less/**/*.less').on('change', function(){
+      return gulp.src('client/assets/less/bootstrap-custom.less').pipe(saveFile());
+    });
     gulp.watch('client/**/*.html').on('change', bs.reload);
     gulp.watch('client/assets/css/**/*.css').on('change', bs.reload);
     gulp.watch('client/views/**/*.hbs').on('change', bs.reload);
