@@ -14,7 +14,7 @@ var gulp        = require('gulp'),
 
 
 // Compile SCSS to CSS
-gulp.task('styles', function () {
+gulp.task('scss', function () {
   return gulp.src('client/assets/scss/**/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('client/assets/css'));
@@ -88,18 +88,20 @@ gulp.task('server:restart', function() {
 });
 
 
+
 // Watch Task
 gulp.task('watch', ['server:start'], function () {
-    gulp.watch('client/assets/scss/**/*.scss',['styles']);
+    gulp.watch('client/assets/scss/**/*.scss',['scss']);
     gulp.watch('client/assets/less/**/*.less',['less']);
     gulp.watch('client/assets/js/**/*.js', ['uglify-js']);
-
     gulp.watch('client/assets/css/**/*.css',['minify-css']);
     gulp.watch('client/assets/bootstrap/less/**/*.less').on('change', function(){
       return gulp.src('client/assets/less/bootstrap-custom.less').pipe(saveFile());
     });
     gulp.watch('client/**/*.html').on('change', bs.reload);
     gulp.watch('client/assets/css/**/*.css').on('change', bs.reload);
+    gulp.watch('client/assets/less/**/*.less').on('change', bs.reload);
+    gulp.watch('client/assets/scss/**/*.scss').on('change', bs.reload);
     gulp.watch('client/dist/**/*.css').on('change', bs.reload);
     gulp.watch('client/dist/**/*.js').on('change', bs.reload);
     gulp.watch('client/views/**/*.hbs').on('change', bs.reload);
