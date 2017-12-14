@@ -109,7 +109,5 @@ $('.mag-trig').click(function(e) {
 
 });
 
-
-
 // Doc Ready
 });

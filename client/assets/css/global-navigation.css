@@ -1,0 +1,20 @@
+.global-navigation ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+.global-navigation ul li {
+  display: inline-block;
+}
+.global-navigation ul li a {
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.global-navigation ul li a:hover {
+  background-color: #111;
+}

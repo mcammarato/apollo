@@ -55,12 +55,16 @@ app.use('/slick', express.static(__dirname + '/bower_components/slick-carousel/s
 // Font Awesome
 app.use('/font-awesome', express.static(__dirname + '/bower_components/font-awesome/css'));
 
+// Dist
+app.use('/dist', express.static(__dirname + '/client/dist'));
+
 
 /// Server Side Assets ///
 //////////////////////////
 
 // Browser-Sync
 app.use('/browser-sync', express.static(__dirname + '/node_modules/browser-sync/bin'));
+
 
 
 /// Server Routes ///
